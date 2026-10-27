@@ -24,7 +24,6 @@ public class Ejercicio1 {
         }
 
         int denominacionActual = Dinero[index];
-
         if (denominacionActual != cantidad && cantidad % denominacionActual == 0) {
             int cuantos = cantidad / denominacionActual;
             System.out.println(cantidad + " = " + cuantos + " de " + denominacionActual);
