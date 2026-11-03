@@ -1,19 +1,4 @@
 # Actividad. Matriz rellenada con triminós (teselas)
-
-| 3  | 3  |  4 |  4 |   |   |   |   |
-|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-| 3 |   2  | 2  | 4  |   |   |  |   |
-| 5 |   2  | 6  | 6  |  |   |  |  |
-| 5 |  5   |  6 | 1  | 1 |  |   |  |
-|  |**X**|   |   | 1 |  |  |  |
-|  |     |  |  |  |  |  |  |
-|  |     |  |  |  |  |  |  |
-|  |     |  |  |  |  |  |  |
-
-X; Hueco / casilla prohibida inicial (-1)
-
-Números (1, 2, 3...); Cada número identifica una pieza en forma de "L" formada por 3 cuadritos (triminós).
-
 ### Definiciones (main)
 * Se declara la matriz que funcionará como tablero
   * su tamaño siempre debe ser cuadrado y una potencia de 2 (por ejemplo 2x2, 4x4, 8x8)
