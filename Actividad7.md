@@ -8,17 +8,12 @@ Este documento contiene la especificación, guía de ejecución e implementació
 
 Para probar e interactuar con las funciones desde la consola usando **CLISP** en un entorno Cygwin:
 
-### Paso 1: Navegar al directorio del proyecto
-```bash
-cd "/cygdrive/c/Users/Rafa115/Downloads/carpeta de pruebas/Programacion Logica y Funcional/Programacion_Logica_y_Funcional_I/Trabajo7"
-```
-
-### Paso 2: Iniciar la REPL de CLISP cargando el archivo
+### Paso 1: Iniciar la REPL de CLISP cargando el archivo
 ```bash
 clisp -i funciones.lsp
 ```
 
-### Paso 3: Recargar cambios dentro de CLISP
+### Paso 2: Recargar cambios dentro de CLISP
 Si realizas modificaciones en el archivo `funciones.lsp` mientras el intérprete sigue abierto, vuelve a cargarlo con:
 ```lisp
 (load "funciones.lsp")
@@ -39,9 +34,9 @@ Si realizas modificaciones en el archivo `funciones.lsp` mientras el intérprete
 
 ---
 
-## 3. Código Fuente (`funciones.lsp`)
+## 2. Código Fuente (`funciones.lsp`)
 
-### 3.1. Funciones de Áreas (2D)
+### 2.1. Funciones de Áreas (2D)
 
 ```lisp
 ;; FUNCIONES DE ÁREA (2D)
@@ -87,7 +82,7 @@ Si realizas modificaciones en el archivo `funciones.lsp` mientras el intérprete
   (* pi semieje-a semieje-b))
 ```
 
-### 3.2. Funciones de Volúmenes (3D)
+### 2.2. Funciones de Volúmenes (3D)
 
 ```lisp
 ;; FUNCIONES DE VOLUMEN (3D)
