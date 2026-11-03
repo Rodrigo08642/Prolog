@@ -1,17 +1,4 @@
 # Actividad. Laberinto
-
-//Laberinto
-| 👤 | 1   |    |     |     |     |    |    |
-|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
-|    | 1    |    | 1  | 1  |    |     |    |
-|    | 1    | 1  | 1  | 1  |    | 1   |    |
-|    |      |    |    | 1  |    | 1   |    |
-|    | 1    |    | 1  | 1  |    | 1   |    |
-|    | 1    |    |    |    |    | 1   | 🚪 |
-
-- 1; Pared/Obstáculo
-- 0; Libre
-
 ### Definiciones (main)
 - Se declara la matriz `laberinto`, que representa el mapa del juego
   - un 0 indica una casilla por la que se puede avanzar y un 1 señala una pared u obstáculo
