@@ -2,7 +2,7 @@
 # Factorial
 El factorial de cualquier número entero se define como el producto acumulativo de ese valor y todos sus enteros positivos inferiores de forma descendente (por ejemplo, $5! = 5 \times 4 \times 3 \times 2 \times 1$). Su implementación computacional suele estructurarse en dos partes esenciales:
 
-* **Lógica recursiva**: Mientras el número sea mayor a 1, la función pospone la operación multiplicando el valor actual por el resultado del factorial anterior ($n \times \text{factorial}(n - 1)$) a la espera de que se resuelva la cadena de llamadas.
+* **Lógica recursiva**: Mientras el número sea mayor a 1, la función pospone la operación multiplicando el valor actual por el resultado del factorial anterior a la espera de que se resuelva la cadena de llamadas.
 * **Condición de parada**: Al alcanzar el 0 o el 1, las llamadas se detienen y se retorna un 1. Este punto final es crucial, ya que un retorno de 0 invalidaría toda la cadena, volviendo cero el resultado total de la multiplicación.
 
 ```java
