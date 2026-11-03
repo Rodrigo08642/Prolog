@@ -1,36 +1,10 @@
-# Actividad. Laberinto
-### Definiciones (main)
-- Se declara la matriz `laberinto`, que representa el mapa del juego
-  - un 0 indica una casilla por la que se puede avanzar y un 1 señala una pared u obstáculo
-- Coordenadas:
-  - La meta `(destinoX, destinoY)` -> (n-1, n-1), donde n es el tamaño de la matriz
-  - La posición de partida `(inicialX, inicialY)` -> (0, 0)
-- Se invoca la función resolver enviándole el laberinto, el punto de partida (0, 0), la meta y una lista vacía donde se irá guardando la ruta que tenga éxito
-  - si resolver devuelve true, se imprime la lista con el recorrido válido
+# Algoritmo de Resolución de Laberintos mediante Backtracking
 
-### Función resolver
-- **Caso base:** Si la posición actual queda fuera de los límites de la matriz o topa con una pared (1), la función descarta ese camino y devuelve false
-- **Registro y meta:** Si la casilla es transitable
-  - se agrega a la lista camino
-  - enseguida comprueba si esa casilla es la meta
-    - en caso afirmativo, devuelve true y la búsqueda termina con éxito
-- **Marcado temporal:** Para evitar ciclos infinitos, el código aplica un truco: convierte la casilla actual en una pared provisional (`lab[y][x] = 1`)
-- **Búsqueda en cada dirección (→, abajo, ←, arriba):** Con el operador || (O) se intenta avanzar hacia:
-  - la derecha `(x+1, y)`
-  - abajo `(x, y+1)`
-  - la izquierda `(x-1, y)`
-  - arriba `(x, y-1)`
-  - Si alguna dirección llega a la salida, las restantes ya no se exploran
-- **Backtracking (retroceso):** Si las cuatro direcciones devuelven false, el explorador se encuentra en un callejón sin salida
-  - Entonces deshace su recorrido:
-    - devuelve la casilla a su estado libre (0), elimina esa coordenada de la lista y regresa un paso atrás
+El algoritmo utiliza una matriz bidimensional llamada `laberinto` donde `0` representa un camino transitable y `1` una pared u obstáculo. Las coordenadas del punto de inicio son `(0, 0)` y el destino final es `(n-1, n-1)`, siendo $n$ el tamaño de la matriz. Al invocar la función `resolver` pasándole el laberinto, el punto de partida, la meta y una lista vacía, si el resultado es exitoso (`true`), se procede a imprimir el camino encontrado.
 
-### Función imprimir lista de caminos
-- Mediante una condición se revisa si la función resolver devolvió true o false; si fue true, se imprime la lista de caminos con el formato (y,x)
-  - recibe un índice i que arranca en 0
-  - ese índice avanza desde 0 hasta el tamaño total de la lista de caminos
-  - en cada paso se imprime la posición (i) de la lista
-  - cuando el índice (i) alcanza el total de elementos de la lista, se muestra un mensaje de finalización
+La función `resolver` evalúa primero si la posición actual está fuera de los límites o choca con una pared (`1`), abortando el camino con `false`. Si la celda es válida, se guarda inmediatamente en la lista de caminos y se comprueba si es la meta final para retornar `true` en caso afirmativo. Para evitar ciclos infinitos, se aplica un marcaje temporal convirtiendo la celda en una pared (`lab[y][x] = 1`). Luego, utiliza el operador lógico de disyunción (`||`) para buscar una salida explorando secuencialmente a la derecha `(x+1, y)`, abajo `(x, y+1)`, izquierda `(x-1, y)` y arriba `(x, y-1)` (ignorando las direcciones restantes si una encuentra la salida). Si las cuatro direcciones fallan, se ejecuta el backtracking: se restaura la celda a `0`, se borra la coordenada de la lista y se retrocede.
+
+Finalmente, tras verificar el resultado positivo de la búsqueda, se imprime la lista de caminos en formato `(y, x)` mediante un índice $i$ que recorre desde `0` hasta el tamaño total de la lista, mostrando cada posición de manera iterativa hasta finalizar el proceso con un mensaje de cierre.
 
 ---
 ```java
