@@ -1,4 +1,4 @@
-# Actividad. 3 funciones recursivas + Prueba de escritorio
+# Actividad. 3 funciones recursivas + Prueba de escritorio.
 # Factorial
 El factorial de un número se obtiene multiplicándolo por cada uno de los enteros menores que él, hasta llegar a 1 (por ejemplo: 5! = 5 * 4 * 3 * 2 * 1).
 * **Caso base:**
