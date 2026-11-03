@@ -1,10 +1,9 @@
 # Actividad. 3 funciones recursivas + Prueba de escritorio.
 # Factorial
-El factorial de un número se obtiene multiplicándolo por cada uno de los enteros menores que él, hasta llegar a 1 (por ejemplo: 5! = 5 * 4 * 3 * 2 * 1).
-* **Caso base:**
-  - Cuando el número es 0 o 1, la función termina y devuelve un `1`.
-  - Si devolviera `0`, todo el producto se anularía y el resultado final siempre sería cero.
-* **Paso recursivo:** Si el número no es 0 ni 1, la función deja en espera la operación `n * factorial(n - 1)` hasta que la llamada siguiente le entregue su resultado.
+El factorial de cualquier número entero se define como el producto acumulativo de ese valor y todos sus enteros positivos inferiores de forma descendente (por ejemplo, $5! = 5 \times 4 \times 3 \times 2 \times 1$). Su implementación computacional suele estructurarse en dos partes esenciales:
+
+* **Lógica recursiva**: Mientras el número sea mayor a 1, la función pospone la operación multiplicando el valor actual por el resultado del factorial anterior ($n \times \text{factorial}(n - 1)$) a la espera de que se resuelva la cadena de llamadas.
+* **Condición de parada**: Al alcanzar el 0 o el 1, las llamadas se detienen y se retorna un 1. Este punto final es crucial, ya que un retorno de 0 invalidaría toda la cadena, volviendo cero el resultado total de la multiplicación.
 
 ```java
 public class Actividad3Factorial {
@@ -28,15 +27,12 @@ public class Actividad3Factorial {
 
 }
 ```
-# Fibonacci
-En la sucesión de Fibonacci, cada término es el resultado de sumar los dos que lo preceden: 0, 1, 1, 2, 3, 5...
-Por lo general, la versión recursiva de este código se ramifica como un árbol y repite muchísimas llamadas. Aquí se presenta una variante lineal y más eficiente, en la que cada llamada recibe los dos valores acumulados (a y b) y avanza paso a paso, de manera similar a un ciclo.
 
-- **Caso base:** Si el contador n vale 0 se devuelve a, y si vale 1 se devuelve b
-- **Paso recursivo:**
-  - Se resta 1 a n para llevar la cuenta de las iteraciones
-  - El valor actual de b se convierte en el nuevo a
-  - El nuevo b será la suma de ambos (a + b)
+# Fibonacci
+En la secuencia de Fibonacci, cada elemento se obtiene sumando sus dos antecesores inmediatos (ej. 0, 1, 1, 2, 3, 5...). A diferencia de la implementación recursiva tradicional —que genera una costosa ramificación en árbol con múltiples llamadas repetidas—, esta alternativa emplea una estructura lineal y acumulativa semejante a un bucle:
+
+* **Paso recursivo:** Se reduce $n$ en una unidad para contabilizar las iteraciones, actualizando los acumuladores de forma que el valor previo de $b$ pasa a ser el nuevo $a$, y el nuevo $b$ resulta de la suma de ambos ($a + b$).
+* **Condición de parada:** Al evaluar el contador, si $n$ es igual a `0` se retorna $a$; si es igual a `1`, se devuelve $b$.
 
 ```java
 public class Actividad3Fibonacci {
@@ -64,10 +60,10 @@ public class Actividad3Fibonacci {
 }
 ```
 # División mediante restas sucesivas
-El resultado de una división equivale a la cantidad de veces que un número cabe dentro de otro. Por ejemplo, en **14/3** se le resta 3 al 14 una y otra vez, y una variable va contando cuántas restas se lograron hacer.
-- **Caso base:** Cuando el dividendo restante ya es menor que el divisor (no alcanza para otra resta):
-  - Se muestra el cociente (la cantidad de restas realizadas) y el residuo (lo que sobró), y se termina con un return
-- **Paso recursivo:** Se resta el divisor al dividendo (dividendo - divisor) y se incrementa en 1 el contador (cociente + 1)
+Conceptualizar la división implica calcular cuántas veces cabe un número en otro mediante sustracciones continuas (por ejemplo, en $14 / 3$ se resta el $3$ al $14$ de forma repetida mientras un contador registra cada operación). Su lógica se compone de dos fases:
+
+* **Paso recursivo:** Se reduce el dividendo restándole el divisor ($dividendo - divisor$) y se incrementa en una unidad el contador del cociente ($cociente + 1$).
+* **Condición de parada:** El proceso termina (`return`) cuando el dividendo restante es menor que el divisor, momento en el cual se despliegan el cociente final (total de restas) y el residuo (remanente).
 
 ```java
 public class Actividad3DIvisionRestas {
